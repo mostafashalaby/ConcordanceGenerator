@@ -1,3 +1,4 @@
+![example](assets/example.png)
 # ConcordanceGenerator
 A keyword-out-of-context generator, implemented both in C and Python. I created this project to test the difference in speed between Python and C. Here are my findings:
 
@@ -13,10 +14,6 @@ A concordance is an alphabetical list of key words found in a text or a collecti
 ![Bible](assets/bibleconcordance.png)
 
 Its like a formal, minimalist mind map.
-
-# Example output
-
-![example](assets/example.png)
 
 # How to use
 
