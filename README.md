@@ -16,31 +16,34 @@ Its like a formal, minimalist mind map.
 
 # Example output
 
-![example](image.png)
+![example](assets/example.png)
+
 # How to use
 
 1. Clone the repo
-2. Navigate to the c or python folder
-3a. If you want to run the c implementation:
-    a. Run in a linux environment or wsl so you can use make
-    b. Run ```make```
-    c. After it is compiled, simply run like so:
-    ```
-    ./concord <input file>
-    ```
-    or, if you want to exclude words
-    ```
-    ./concord -e <words-to-exclude file> <input file>
-    ```
-3b. If you want to run the python implementation:
-    a. Simply
-    ```
-    python concord.py <input file>
-    ```
-    or, if you want to exclude words
-    ```
-    python concord.py -e <words-to-exclude file> <input file>
-    ```
+2. Navigate to the `c` or `python` folder
+
+3. **If you want to run the C implementation**:
+   1. Run in a Linux environment or WSL so you can use `make`
+   2. Run `make` to compile the code
+   3. After it is compiled, simply run:
+      ```
+      ./concord <input file>
+      ```
+      or, if you want to exclude words:
+      ```
+      ./concord -e <words-to-exclude file> <input file>
+      ```
+
+4. **If you want to run the Python implementation**:
+   1. Simply run:
+      ```
+      python concord.py <input file>
+      ```
+   2. Or, if you want to exclude words:
+      ```
+      python concord.py -e <words-to-exclude file> <input file>
+      ```
 
 # Feature Comparison between Implementations
 | Feature               | C Implementation                              | Python Implementation                         |
@@ -53,7 +56,7 @@ Its like a formal, minimalist mind map.
 | **Memory Management**  | Manual (free linked lists with `free_list()`).| Automatic garbage collection.                 |
 | **Error Handling**     | Manual error checking (file opening, etc.).   | Exception handling with `try-except`.         |
 
-## TL;DR
+# TL;DR
 C offers low-level control, suitable for systems where fine-grained control of memory and performance is necessary.
 
 Python is easier to implement, more concise, and handles memory, string manipulation, and file I/O automatically, making it more user-friendly and less error-prone for text analysis tasks.
