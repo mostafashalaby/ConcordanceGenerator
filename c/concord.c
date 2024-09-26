@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "emalloc.h"
-#include "seng265-list.h"
+#include "linked-list.h"
 
 #define MAX_LINE_LENGTH 100
 #define MAX_WORD_LENGTH 40
