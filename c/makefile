@@ -6,14 +6,14 @@ CFLAGS=-c -Wall -g -DDEBUG -D_GNU_SOURCE -std=c99
 
 all: concord
 
-concord: concord.o seng265-list.o emalloc.o
-	$(CC) concord.o seng265-list.o emalloc.o -o concord
+concord: concord.o linked-list.o emalloc.o
+	$(CC) concord.o linked-list.o emalloc.o -o concord
 
-concord.o: concord.c seng265-list.h emalloc.h
+concord.o: concord.c linked-list.h emalloc.h
 	$(CC) $(CFLAGS) concord.c
 
-seng265-list.o: seng265-list.c seng265-list.h emalloc.h
-	$(CC) $(CFLAGS) seng265-list.c
+linked-list.o: linked-list.c linked-list.h emalloc.h
+	$(CC) $(CFLAGS) linked-list.c
 
 emalloc.o: emalloc.c emalloc.h
 	$(CC) $(CFLAGS) emalloc.c
