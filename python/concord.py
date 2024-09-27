@@ -1,4 +1,6 @@
 import re
+import sys
+from pathlib import Path
 
 
 class Concordance:
@@ -7,8 +9,8 @@ class Concordance:
         """
         initializes attributes of Concordance instance
         """
-        self.input_name = input_name
-        self.exclusion_name = exclusion_name
+        self.input_name = Path(input_name)
+        self.exclusion_name = Path(exclusion_name) if exclusion_name else None
 
     @staticmethod
     def __read(filename):
@@ -64,7 +66,7 @@ class Concordance:
     
     def full_text(self):
         """
-        returns a list of strings corresponding to the Concordance output specified
+        prints a list of strings corresponding to the Concordance output specified
         """
         full_text = []
         input_list = self.__read(self.input_name)
@@ -82,4 +84,21 @@ class Concordance:
                     output += "({})".format(i+1) if occurrences == 1 else "({}*)".format(i+1)
                     full_text.append(output)
 
-        return full_text
+        for line in full_text:
+            print(line)
+
+if __name__ == "__main__":
+    num_arguments = len(sys.argv)
+    if num_arguments == 2:
+        input_name, exclude_name = sys.argv[1], None
+    elif num_arguments == 4 and sys.argv[1] == "-e":
+        input_name, exclude_name = sys.argv[3], sys.argv[2]
+    elif num_arguments == 4 and sys.argv[2] == "-e":
+        input_name, exclude_name = sys.argv[1], sys.argv[3]
+    else:
+        print("usage:\n{} <file to intake>".format(sys.argv[0]))
+        print("or:\n{} -e <file to exclude> <file to intake>".format(sys.argv[0]))
+        sys.exit(1)
+
+    concordance = Concordance(input_name, exclude_name)
+    concordance.full_text()
