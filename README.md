@@ -1,6 +1,6 @@
 ![example](assets/example.png)
 # ConcordanceGenerator
-A keyword-out-of-context generator, implemented both in C and Python. I created this project to test the difference in speed between Python and C. Here are my findings:
+A keyword-out-of-context concordance generator, implemented both in C and Python. I created this project to test the difference in speed between Python and C. Here are my findings:
 
 |              | **Python** | **C**      |
 |--------------|------------|------------|
@@ -9,11 +9,11 @@ A keyword-out-of-context generator, implemented both in C and Python. I created 
 
 # What is a keyword-out-of-context concordance?
 
-A concordance is an alphabetical list of key words found in a text or a collection of texts. A keyword-out-of-context concordance specificially seperates the word and the sentence it is found in, side by side. The concept originated in the study of religious texts like the bible, to allow for in-depth study.
+A concordance is an alphabetical list of keywords found in a text or a collection of texts. A keyword-out-of-context concordance specifically separates the word and the sentence it is found in, side by side. The concept originated in the study of religious texts like the bible, to allow for in-depth study.
 
 ![Bible](assets/bibleconcordance.png)
 
-Its like a formal, minimalist mind map.
+It's like a formal, minimalist mind map.
 
 # How to use
 
